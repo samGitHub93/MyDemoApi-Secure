@@ -30,4 +30,8 @@ public interface UserService {
     Stream<UserIdentityDTO> getByAgeFlux(int age);
 
     UserIdentityDTO getByIdMono(int id);
+
+    String verify(UserUsernamePwdDTO userUsernamePwdDTO);
+
+    String verify(UserEmailPwdDTO userEmailPwdDTO);
 }

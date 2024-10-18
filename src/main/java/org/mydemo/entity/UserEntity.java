@@ -34,10 +34,6 @@ public class UserEntity {
 
     @Column(name = "password")
     @NotBlank
-    @Pattern(
-            regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
-            message = "Password must have minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character."
-    )
     private String password;
 
     @Column(name = "username")

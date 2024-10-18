@@ -59,6 +59,16 @@ public class UserController {
         return new ResponseEntity<>(userService.register(userCreateDTO), HttpStatusCode.valueOf(200));
     }
 
+    @PostMapping(value = "/loginEmail")
+    public ResponseEntity<String> login(@Valid @RequestBody UserEmailPwdDTO userEmailPwdDTO){
+        return new ResponseEntity<>(userService.verify(userEmailPwdDTO), HttpStatusCode.valueOf(200));
+    }
+
+    @PostMapping(value = "/loginUsername")
+    public ResponseEntity<String> login(@Valid @RequestBody UserUsernamePwdDTO userUsernamePwdDTO){
+        return new ResponseEntity<>(userService.verify(userUsernamePwdDTO), HttpStatusCode.valueOf(200));
+    }
+
     @PostMapping(value = "/getIdentityInfoByUsername")
     public ResponseEntity<UserIdentityDTO> getIdentityInfoByUsername(@Valid @RequestBody UserUsernamePwdDTO userUsernamePwdDTO){
         return new ResponseEntity<>(userService.getIdentityInfoByUsername(userUsernamePwdDTO), HttpStatusCode.valueOf(200));
